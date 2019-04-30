@@ -5,9 +5,11 @@ from dataclasses import dataclass, field
 from enum import Enum, auto
 from typing import Any, Optional
 
+
 class Display(Enum):
     COLLECTION = auto()
-    
+
+
 @dataclass
 class Node:
     value: Display
@@ -16,10 +18,12 @@ class Node:
     def add_child(self, child):
         self.children.append(child)
 
+
 @dataclass
 class ConnectedNode:
     lhs: Any
     rhs: Any
+
 
 class Viz:
     typeregs = {}
@@ -47,6 +51,7 @@ def mapping(self, obj):
         child = ConnectedNode(self.visit(key), self.visit(value))
         node.add_child(child)
     return node
+
 
 viz = Viz()
 node = viz.visit({1: 1, 2: 2, 3: {1: 2}})

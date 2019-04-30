@@ -11,7 +11,7 @@ setup(
     version="0.1",
     packages=find_packages(),
     url="https://github.com/karavana",
-    description = "Karavana",
+    description = "Object Visualization",
     long_description = long_description,
     long_description_content_type = "text/markdown",
 )

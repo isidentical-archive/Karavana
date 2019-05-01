@@ -17,19 +17,26 @@ class Node:
 
     def add_child(self, child):
         self.children.append(child)
+    
+    def __str__(self):
+        level = 0
+        for child in self.children:
+            print(child)
 
 @dataclass
 class KVNode:
     lhs: Any
     rhs: Any
-
+    
+    def __str__(self):
+        return f"\n{self.lhs} => {self.rhs} | "
 @dataclass
 class LinkedNode:
     prev: Optional[LinkedNode]
     value: Any
     
     def __str__(self):
-        return f"{value} ->"
+        return f"\n{self.value} ->"
     
 class Viz:
     typeregs = {}
@@ -87,3 +94,4 @@ node = viz.visit({
     (1, 2): 'a'
 })
 
+print(node)
